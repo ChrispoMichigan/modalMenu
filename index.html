@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Raspados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Raspados</h1>
+        <div class="menu-principal">
+            <div class="opcion" onclick="abrirModal('modal-combinado')">
+                <h2>Combinado</h2>
+                <p>Elige hasta 7 sabores</p>
+            </div>
+            <div class="opcion" onclick="abrirModal('modal-natural')">
+                <h2>Natural</h2>
+                <p>Simple y delicioso</p>
+            </div>
+            <div class="opcion" onclick="abrirModal('modal-enchiloso')">
+                <h2>Enchiloso</h2>
+                <p>Con toque picante</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Combinado -->
+    <div id="modal-combinado" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-combinado')">&times;</span>
+            <h2>Combinado - Selecciona hasta 7 sabores</h2>
+            <div class="sabores-grid">
+                <div class="sabor" onclick="seleccionarSabor(this)">Fresa</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Limón</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Mango</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Tamarindo</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Piña</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Sandía</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Guayaba</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Uva</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Coco</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Melón</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Nuez</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Vainilla</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Chocolate</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Durazno</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Fresa con Crema</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Plátano</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Kiwi</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Maracuyá</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Naranja</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Cereza</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Menta</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Rompope</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Chamoy</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Cajeta</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Mamey</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Zarzamora</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Frambuesa</div>
+                <div class="sabor" onclick="seleccionarSabor(this)">Pistache</div>
+            </div>
+            <button class="boton-continuar" onclick="continuarPedidoCombinado()">Continuar Pedido</button>
+        </div>
+    </div>
+
+    <!-- Modal Natural -->
+    <div id="modal-natural" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-natural')">&times;</span>
+            <h2>Natural - Selecciona una opción</h2>
+            <div class="opciones-grid">
+                <div class="opcion-natural" onclick="seleccionarOpcionNatural('Lechera')">
+                    <h3>Lechera</h3>
+                </div>
+                <div class="opcion-natural" onclick="seleccionarOpcionNatural('Chilito')">
+                    <h3>Chilito</h3>
+                </div>
+                <div class="opcion-natural" onclick="seleccionarOpcionEscarchado('natural')">
+                    <h3>Escarchado</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Enchiloso -->
+    <div id="modal-enchiloso" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-enchiloso')">&times;</span>
+            <h2>Enchiloso - Selecciona una opción</h2>
+            <div class="opciones-grid">
+                <div class="opcion-enchiloso" onclick="seleccionarOpcionEnchiloso('Chile')">
+                    <h3>Chile</h3>
+                </div>
+                <div class="opcion-enchiloso" onclick="seleccionarOpcionEnchiloso('Chamoy')">
+                    <h3>Chamoy</h3>
+                </div>
+                <div class="opcion-enchiloso" onclick="seleccionarOpcionEnchiloso('Limón')">
+                    <h3>Limón</h3>
+                </div>
+                <div class="opcion-enchiloso" onclick="seleccionarOpcionEscarchado('enchiloso')">
+                    <h3>Escarchado</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Escarchado -->
+    <div id="modal-escarchado" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-escarchado')">&times;</span>
+            <h2>Escarchado - Selecciona una opción</h2>
+            <div class="opciones-grid">
+                <div class="opcion-escarchado" onclick="seleccionarTipoEscarchado('Por dentro')">
+                    <h3>Por dentro</h3>
+                </div>
+                <div class="opcion-escarchado" onclick="seleccionarTipoEscarchado('Por fuera')">
+                    <h3>Por fuera</h3>
+                </div>
+                <div class="opcion-escarchado" onclick="seleccionarTipoEscarchado('Ambos lados')">
+                    <h3>Ambos lados</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Resumen -->
+    <div id="modal-resumen" class="modal">
+        <div class="modal-contenido">
+            <span class="cerrar" onclick="cerrarModal('modal-resumen')">&times;</span>
+            <h2>Resumen del Pedido</h2>
+            <div id="resumen-contenido"></div>
+            <button class="boton-realizar-pedido" onclick="realizarPedido()">Realizar Pedido</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
